@@ -13,7 +13,7 @@ function loadEventListeners() {
     form.addEventListener('submit', addTask); // add task event
     taskList.addEventListener('click', removeTask); // remove task event
     clearBtn.addEventListener('click', clearTasks); // clear task event
-    filter.addEventListener('keyup', filterTasks);
+    filter.addEventListener('keyup', filterTasks); // keyup event listener 
 }
 
 // add task
@@ -30,10 +30,8 @@ function addTask(e) {
     li.appendChild(link); // append link to li
     taskList.appendChild(li); // append li to u
     taskInput.value = ''; // clear input
-    e.preventDefault();
+    e.preventDefault(); // prevent default form behavior 
 }
-
-// if(confirm('are you sure?')){
 
 // removes li
 function removeTask(e) {
@@ -44,8 +42,7 @@ function removeTask(e) {
 
 // clear task function
 function clearTasks() {
-    // taskList.innerHTML = '';
-    // while loop:
+    taskList.innerHTML = '';
     while (taskList.firstChild) {
         taskList.removeChild(taskList.firstChild);
     }
